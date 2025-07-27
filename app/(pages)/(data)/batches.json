@@ -1,0 +1,716 @@
+
+{
+  "batch-001": {
+    "supplies": [
+      {
+        "id": "apples",
+        "life": "125",
+        "quantity": "250"
+      },
+      {
+        "id": "bananas",
+        "life": "24",
+        "quantity": "250"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "farm",
+        "label": "Farm (Kerala)",
+        "timestamp": "2025-07-27T08:00:00Z",
+        "location": "Kerala, India",
+        "temperature": "30°C",
+        "humidity": "80%",
+        "status": "Harvesting",
+        "delay": "0",
+        "type": "source"
+      },
+      {
+        "id": "proc-chennai",
+        "label": "Processor (Chennai)",
+        "timestamp": "2025-07-27T12:00:00Z",
+        "location": "Chennai, India",
+        "temperature": "35°C",
+        "humidity": "60%",
+        "status": "Processed",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "50%"
+      },
+      {
+        "id": "proc-tanjore",
+        "label": "Processor (Tanjore)",
+        "timestamp": "2025-07-27T13:00:00Z",
+        "location": "Tanjore, India",
+        "temperature": "30°C",
+        "humidity": "40%",
+        "status": "Processed",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "50%"
+      },
+      {
+        "id": "wh",
+        "label": "Warehouse (Bangalore)",
+        "timestamp": "2025-07-27T15:00:00Z",
+        "location": "Bangalore, India",
+        "temperature": "28°C",
+        "humidity": "70%",
+        "status": "Stored",
+        "delay": "0",
+        "type": "merge" 
+      },
+      {
+        "id": "retail",
+        "label": "Retailer (Hyderabad)",
+        "timestamp": "2025-07-28T09:00:00Z",
+        "location": "Hyderabad, India",
+        "temperature": "32°C",
+        "humidity": "65%",
+        "status": "Retailed",
+        "delay": "0",
+        "type": "destination"
+      }
+    ],
+    "edges": [
+      {
+        "source": "farm",
+        "target": "proc-chennai",
+        "timestamp": "2025-07-27T08:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4 hours"
+      },
+      {
+        "source": "farm",
+        "target": "proc-tanjore",
+        "timestamp": "2025-07-27T08:45:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4.5 hours"
+      },
+      {
+        "source": "proc-chennai",
+        "target": "wh",
+        "timestamp": "2025-07-27T12:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "6 hours"
+      },
+      {
+        "source": "proc-tanjore",
+        "target": "wh",
+        "timestamp": "2025-07-27T13:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "5.5 hours"
+      },
+      {
+        "source": "wh",
+        "target": "retail",
+        "timestamp": "2025-07-27T16:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "8 hours"
+      }
+    ]
+  },
+    "batch-002": {
+    "supplies": [
+      { "id": "milk", "life": "72", "quantity": "500" },
+      { "id": "cheese", "life": "200", "quantity": "150" }
+    ],
+    "nodes": [
+      {
+        "id": "dairy",
+        "label": "Dairy Farm (Punjab)",
+        "timestamp": "2025-07-26T06:00:00Z",
+        "location": "Punjab, India",
+        "temperature": "22°C",
+        "humidity": "85%",
+        "status": "Harvesting",
+        "delay": "0",
+        "type": "source"
+      },
+      {
+        "id": "proc-delhi",
+        "label": "Processor (Delhi)",
+        "timestamp": "2025-07-26T10:00:00Z",
+        "location": "Delhi, India",
+        "temperature": "30°C",
+        "humidity": "60%",
+        "status": "Processed",
+        "delay": "1",
+        "type": "processor",
+        "capacity": "60%"
+      },
+      {
+        "id": "dc",
+        "label": "Distribution Center (Agra)",
+        "timestamp": "2025-07-26T15:00:00Z",
+        "location": "Agra, India",
+        "temperature": "28°C",
+        "humidity": "65%",
+        "status": "Stored",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "retail-lucknow",
+        "label": "Retailer (Lucknow)",
+        "timestamp": "2025-07-27T08:00:00Z",
+        "location": "Lucknow, India",
+        "temperature": "33°C",
+        "humidity": "70%",
+        "status": "Retailed",
+        "delay": "0",
+        "type": "destination"
+      }
+    ],
+    "edges": [
+      {
+        "source": "dairy",
+        "target": "proc-delhi",
+        "timestamp": "2025-07-26T06:30:00Z",
+        "mode_of_transport": "Refrigerated Truck",
+        "estimated_duration": "4 hours"
+      },
+      {
+        "source": "proc-delhi",
+        "target": "dc",
+        "timestamp": "2025-07-26T11:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4 hours"
+      },
+      {
+        "source": "dc",
+        "target": "retail-lucknow",
+        "timestamp": "2025-07-26T17:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "5 hours"
+      }
+    ]
+  },
+
+  "batch-003": {
+    "supplies": [
+      { "id": "rice", "life": "365", "quantity": "1000" }
+    ],
+    "nodes": [
+      {
+        "id": "mill",
+        "label": "Rice Mill (West Bengal)",
+        "timestamp": "2025-07-25T09:00:00Z",
+        "location": "Kolkata, India",
+        "temperature": "31°C",
+        "humidity": "75%",
+        "status": "Milled",
+        "delay": "0",
+        "type": "source"
+      },
+      {
+        "id": "hub1",
+        "label": "Transit Hub (Ranchi)",
+        "timestamp": "2025-07-25T15:00:00Z",
+        "location": "Ranchi, India",
+        "temperature": "29°C",
+        "humidity": "60%",
+        "status": "In Transit",
+        "delay": "2",
+        "type": "split"
+      },
+      {
+        "id": "warehouse-bhopal",
+        "label": "Warehouse (Bhopal)",
+        "timestamp": "2025-07-26T10:00:00Z",
+        "location": "Bhopal, India",
+        "temperature": "27°C",
+        "humidity": "65%",
+        "status": "Stored",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "80%"
+      },
+      {
+        "id": "retail-mumbai",
+        "label": "Retailer (Mumbai)",
+        "timestamp": "2025-07-27T09:00:00Z",
+        "location": "Mumbai, India",
+        "temperature": "32°C",
+        "humidity": "68%",
+        "status": "Retailed",
+        "delay": "0",
+        "type": "destination"
+      }
+    ],
+    "edges": [
+      {
+        "source": "mill",
+        "target": "hub1",
+        "timestamp": "2025-07-25T10:00:00Z",
+        "mode_of_transport": "Rail",
+        "estimated_duration": "6 hours"
+      },
+      {
+        "source": "hub1",
+        "target": "warehouse-bhopal",
+        "timestamp": "2025-07-25T16:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "10 hours"
+      },
+      {
+        "source": "warehouse-bhopal",
+        "target": "retail-mumbai",
+        "timestamp": "2025-07-26T14:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "12 hours"
+      }
+    ]
+  },
+
+  "batch-004": {
+    "supplies": [
+      { "id": "mangoes", "life": "96", "quantity": "300" },
+      { "id": "papayas", "life": "72", "quantity": "200" }
+    ],
+    "nodes": [
+      {
+        "id": "farm2",
+        "label": "Fruit Farm (Andhra)",
+        "timestamp": "2025-07-24T07:00:00Z",
+        "location": "Andhra Pradesh, India",
+        "temperature": "33°C",
+        "humidity": "75%",
+        "status": "Harvesting",
+        "delay": "0",
+        "type": "source"
+      },
+      {
+        "id": "proc-vijayawada",
+        "label": "Processor (Vijayawada)",
+        "timestamp": "2025-07-24T10:00:00Z",
+        "location": "Vijayawada, India",
+        "temperature": "34°C",
+        "humidity": "60%",
+        "status": "Processed",
+        "delay": "1",
+        "type": "processor",
+        "capacity": "70%"
+      },
+      {
+        "id": "merge-center",
+        "label": "Merge Center (Nagpur)",
+        "timestamp": "2025-07-24T20:00:00Z",
+        "location": "Nagpur, India",
+        "temperature": "30°C",
+        "humidity": "65%",
+        "status": "Merged",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "retail-pune",
+        "label": "Retailer (Pune)",
+        "timestamp": "2025-07-25T10:00:00Z",
+        "location": "Pune, India",
+        "temperature": "31°C",
+        "humidity": "70%",
+        "status": "Retailed",
+        "delay": "0",
+        "type": "destination"
+      }
+    ],
+    "edges": [
+      {
+        "source": "farm2",
+        "target": "proc-vijayawada",
+        "timestamp": "2025-07-24T08:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "3 hours"
+      },
+      {
+        "source": "proc-vijayawada",
+        "target": "merge-center",
+        "timestamp": "2025-07-24T12:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "8 hours"
+      },
+      {
+        "source": "merge-center",
+        "target": "retail-pune",
+        "timestamp": "2025-07-24T22:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "12 hours"
+      }
+    ]
+  },
+  "batch-005": {
+    "supplies": [
+      { "id": "tomatoes", "life": "96", "quantity": "500" },
+      { "id": "spinach", "life": "48", "quantity": "300" }
+    ],
+    "nodes": [
+      {
+        "id": "farm-maharashtra",
+        "label": "Farm (Maharashtra)",
+        "timestamp": "2025-07-26T06:00:00Z",
+        "location": "Nashik, Maharashtra",
+        "temperature": "26°C",
+        "humidity": "85%",
+        "status": "Harvesting",
+        "delay": "0",
+        "type": "source"
+      },
+      {
+        "id": "proc-mumbai",
+        "label": "Processor (Mumbai)",
+        "timestamp": "2025-07-26T10:00:00Z",
+        "location": "Mumbai, India",
+        "temperature": "30°C",
+        "humidity": "70%",
+        "status": "Processed",
+        "delay": "1",
+        "type": "processor",
+        "capacity": "50%"
+      },
+      {
+        "id": "proc-pune",
+        "label": "Processor (Pune)",
+        "timestamp": "2025-07-26T10:30:00Z",
+        "location": "Pune, India",
+        "temperature": "28°C",
+        "humidity": "65%",
+        "status": "Processed",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "50%"
+      },
+      {
+        "id": "dc-nagpur",
+        "label": "Distribution Center (Nagpur)",
+        "timestamp": "2025-07-26T18:00:00Z",
+        "location": "Nagpur, India",
+        "temperature": "29°C",
+        "humidity": "60%",
+        "status": "Merged",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "retail-indore",
+        "label": "Retailer (Indore)",
+        "timestamp": "2025-07-27T09:00:00Z",
+        "location": "Indore, India",
+        "temperature": "32°C",
+        "humidity": "65%",
+        "status": "Retailed",
+        "delay": "0",
+        "type": "destination"
+      }
+    ],
+    "edges": [
+      {
+        "source": "farm-maharashtra",
+        "target": "proc-mumbai",
+        "timestamp": "2025-07-26T06:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "3.5 hours"
+      },
+      {
+        "source": "farm-maharashtra",
+        "target": "proc-pune",
+        "timestamp": "2025-07-26T06:45:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "3 hours"
+      },
+      {
+        "source": "proc-mumbai",
+        "target": "dc-nagpur",
+        "timestamp": "2025-07-26T11:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "6.5 hours"
+      },
+      {
+        "source": "proc-pune",
+        "target": "dc-nagpur",
+        "timestamp": "2025-07-26T11:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "6 hours"
+      },
+      {
+        "source": "dc-nagpur",
+        "target": "retail-indore",
+        "timestamp": "2025-07-26T19:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "10 hours"
+      }
+    ]
+  },
+  "batch-006": {
+    "supplies": [
+      { "id": "grapes", "life": "72", "quantity": "400" },
+      { "id": "lettuce", "life": "36", "quantity": "200" }
+    ],
+    "nodes": [
+      {
+        "id": "farm-nilgiris",
+        "label": "Farm (Nilgiris)",
+        "timestamp": "2025-07-26T05:00:00Z",
+        "location": "Nilgiris, Tamil Nadu",
+        "temperature": "20°C",
+        "humidity": "90%",
+        "status": "Harvesting",
+        "delay": "0",
+        "type": "source"
+      },
+      {
+        "id": "proc-coimbatore",
+        "label": "Processor (Coimbatore)",
+        "timestamp": "2025-07-26T08:00:00Z",
+        "location": "Coimbatore, India",
+        "temperature": "29°C",
+        "humidity": "60%",
+        "status": "Processed",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "60%"
+      },
+      {
+        "id": "proc-mysore",
+        "label": "Processor (Mysore)",
+        "timestamp": "2025-07-26T08:30:00Z",
+        "location": "Mysore, India",
+        "temperature": "27°C",
+        "humidity": "65%",
+        "status": "Processed",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "40%"
+      },
+      {
+        "id": "merge-blr",
+        "label": "Merge Center (Bangalore)",
+        "timestamp": "2025-07-26T12:30:00Z",
+        "location": "Bangalore, India",
+        "temperature": "28°C",
+        "humidity": "70%",
+        "status": "Merged",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "merge-chennai",
+        "label": "Merge Center (Chennai)",
+        "timestamp": "2025-07-26T13:00:00Z",
+        "location": "Chennai, India",
+        "temperature": "33°C",
+        "humidity": "60%",
+        "status": "Merged",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "retail-vijayawada",
+        "label": "Retailer (Vijayawada)",
+        "timestamp": "2025-07-27T08:00:00Z",
+        "location": "Vijayawada, India",
+        "temperature": "32°C",
+        "humidity": "65%",
+        "status": "Retailed",
+        "delay": "0",
+        "type": "destination"
+      }
+    ],
+    "edges": [
+      {
+        "source": "farm-nilgiris",
+        "target": "proc-coimbatore",
+        "timestamp": "2025-07-26T05:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "2.5 hours"
+      },
+      {
+        "source": "farm-nilgiris",
+        "target": "proc-mysore",
+        "timestamp": "2025-07-26T05:45:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "3 hours"
+      },
+      {
+        "source": "proc-coimbatore",
+        "target": "merge-chennai",
+        "timestamp": "2025-07-26T08:15:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4.5 hours"
+      },
+      {
+        "source": "proc-mysore",
+        "target": "merge-blr",
+        "timestamp": "2025-07-26T09:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "3.5 hours"
+      },
+      {
+        "source": "merge-blr",
+        "target": "retail-vijayawada",
+        "timestamp": "2025-07-26T15:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "12 hours"
+      },
+      {
+        "source": "merge-chennai",
+        "target": "retail-vijayawada",
+        "timestamp": "2025-07-26T16:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "11 hours"
+      }
+    ]
+  },
+  "batch-007": {
+    "supplies": [
+      { "id": "mangoes", "life": "96", "quantity": "600" },
+      { "id": "spinach", "life": "24", "quantity": "300" }
+    ],
+    "nodes": [
+      {
+        "id": "farm-pune",
+        "label": "Farm (Pune)",
+        "timestamp": "2025-07-25T06:00:00Z",
+        "location": "Pune, India",
+        "temperature": "27°C",
+        "humidity": "75%",
+        "status": "Harvesting",
+        "delay": "0",
+        "type": "source"
+      },
+      {
+        "id": "proc-mumbai",
+        "label": "Processor (Mumbai)",
+        "timestamp": "2025-07-25T09:00:00Z",
+        "location": "Mumbai, India",
+        "temperature": "30°C",
+        "humidity": "70%",
+        "status": "Processed",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "60%"
+      },
+      {
+        "id": "proc-nagpur",
+        "label": "Processor (Nagpur)",
+        "timestamp": "2025-07-25T09:30:00Z",
+        "location": "Nagpur, India",
+        "temperature": "31°C",
+        "humidity": "65%",
+        "status": "Processed",
+        "delay": "0",
+        "type": "processor",
+        "capacity": "40%"
+      },
+      {
+        "id": "dc-bhopal",
+        "label": "Distribution Center (Bhopal)",
+        "timestamp": "2025-07-25T14:00:00Z",
+        "location": "Bhopal, India",
+        "temperature": "33°C",
+        "humidity": "55%",
+        "status": "Merged",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "dc-nashik",
+        "label": "Distribution Center (Nashik)",
+        "timestamp": "2025-07-25T13:30:00Z",
+        "location": "Nashik, India",
+        "temperature": "29°C",
+        "humidity": "50%",
+        "status": "Merged",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "dc-indore",
+        "label": "Distribution Center (Indore)",
+        "timestamp": "2025-07-25T14:30:00Z",
+        "location": "Indore, India",
+        "temperature": "32°C",
+        "humidity": "60%",
+        "status": "Merged",
+        "delay": "0",
+        "type": "merge"
+      },
+      {
+        "id": "retail-raipur",
+        "label": "Retailer (Raipur)",
+        "timestamp": "2025-07-26T09:00:00Z",
+        "location": "Raipur, India",
+        "temperature": "34°C",
+        "humidity": "58%",
+        "status": "Retailed",
+        "delay": "0",
+        "type": "destination"
+      }
+    ],
+    "edges": [
+      {
+        "source": "farm-pune",
+        "target": "proc-mumbai",
+        "timestamp": "2025-07-25T06:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "2.5 hours"
+      },
+      {
+        "source": "farm-pune",
+        "target": "proc-nagpur",
+        "timestamp": "2025-07-25T06:45:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "3 hours"
+      },
+      {
+        "source": "proc-mumbai",
+        "target": "dc-nashik",
+        "timestamp": "2025-07-25T09:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4 hours"
+      },
+      {
+        "source": "proc-mumbai",
+        "target": "dc-bhopal",
+        "timestamp": "2025-07-25T09:45:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4.25 hours"
+      },
+      {
+        "source": "proc-nagpur",
+        "target": "dc-bhopal",
+        "timestamp": "2025-07-25T10:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4 hours"
+      },
+      {
+        "source": "proc-nagpur",
+        "target": "dc-indore",
+        "timestamp": "2025-07-25T10:15:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "4.25 hours"
+      },
+      {
+        "source": "dc-nashik",
+        "target": "retail-raipur",
+        "timestamp": "2025-07-25T18:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "12 hours"
+      },
+      {
+        "source": "dc-bhopal",
+        "target": "retail-raipur",
+        "timestamp": "2025-07-25T18:30:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "11 hours"
+      },
+      {
+        "source": "dc-indore",
+        "target": "retail-raipur",
+        "timestamp": "2025-07-25T19:00:00Z",
+        "mode_of_transport": "Truck",
+        "estimated_duration": "10.5 hours"
+      }
+    ]
+  }
+}
